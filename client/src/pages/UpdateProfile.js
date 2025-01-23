@@ -62,7 +62,7 @@ const UpdateProfile =()=>{
 
     useEffect(()=> {
         getUser();
-    },[]);
+    },[getUser]);
 
 
     return(

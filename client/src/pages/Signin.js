@@ -46,7 +46,7 @@ const Signin = () => {
     if(Object.keys(user).length !== 0){
       navigate('/dashboard');
     }
-  },[user])
+  },[user,navigate])
 
 
   return(

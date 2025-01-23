@@ -48,7 +48,7 @@ const Signup=()=>{
       if(Object.keys(user).length !== 0) {
         navigate("/dashboard");
       }
-    },[user])
+    },[user,navigate])
 
     return(
       <div className='w-full flex items-center justify-center min-h-screen bg-gray-100'>
