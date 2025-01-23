@@ -15,7 +15,11 @@ require('dotenv').config();
 // };
 
 // Apply CORS middleware
-app.use(cors());
+app.use(cors({
+    origin: 'https://paytm-clone-frontend-70yc.onrender.com'
+}));
+app.options('*', cors());  // Enable CORS preflight requests
+
 app.use(express.json());
 
 const mainRoute=require('./routes/index')
