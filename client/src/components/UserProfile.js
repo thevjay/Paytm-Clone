@@ -21,7 +21,7 @@ export const UserProfile = () => {
     const fetchUserProfile = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("http://localhost:8000/api/v1/user/profile", {
+        const response = await axios.get( process.env.REACT_APP_API_URL + "/user/profile", {
           headers: { Authorization: `Bearer ${token}` }
         });
         setUser(response.data);
@@ -58,7 +58,7 @@ export const UserProfile = () => {
         ...(formData.password.length >= 6 ? { password: formData.password } : {})
       };
 
-      const response = await axios.put("http://localhost:8000/api/v1/user/update", updateData, {
+      const response = await axios.put( process.env.REACT_APP_API_URL + "/user/update", updateData, {
         headers: { Authorization: `Bearer ${token}` }
       });
 

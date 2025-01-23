@@ -13,7 +13,7 @@ export const Appbar = () => {
       try {
         const token = localStorage.getItem("token");
         if (token) {
-          const response = await axios.get("http://localhost:8000/api/v1/user/profile", {
+          const response = await axios.get(  process.env.REACT_APP_API_URL + "/user/profile", {
             headers: {
               Authorization: "Bearer " + token,
             },

@@ -5,7 +5,7 @@ export const Balance = () => {
 
     const [balance, setBalance] = useState(null)
         useEffect(()=> {
-            axios.get("http://localhost:8000/api/v1/account/balance", {
+            axios.get( process.env.REACT_APP_API_URL + "/account/balance", {
                     headers: {
                         Authorization: "Bearer " + localStorage.getItem("token"),
                         'Content-Type': 'application/json',

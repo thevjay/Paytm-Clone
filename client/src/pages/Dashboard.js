@@ -30,7 +30,7 @@ const Dashboard =()=> {
 
     try{
 
-      const { data } = await axios.get(`http://localhost:8000/api/v1/user/bulk?filter=${filter}`,
+      const { data } = await axios.get(  `${process.env.REACT_APP_API_URL}/user/bulk?filter=${filter}`,
         {
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token")
@@ -52,7 +52,7 @@ const Dashboard =()=> {
   const getBalance = async () =>{
     try{
 
-      const { data } = await axios.get(`http://localhost:8000/api/v1/account/balance`,
+      const { data } = await axios.get( `${process.env.REACT_APP_API_URL}/account/balance`,
         {
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
@@ -74,7 +74,7 @@ const Dashboard =()=> {
   const transferMoney = async (transferData) => {
     if(transferData.receiver){
       try{
-        const { data } = await axios.post(`http://localhost:8000/api/v1/account/transfer`,
+        const { data } = await axios.post(`${process.env.REACT_APP_API_URL}/account/transfer`,
           { to: receiverId, amount: transferData.amount},
           {
             headers: {

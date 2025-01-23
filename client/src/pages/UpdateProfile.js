@@ -20,7 +20,7 @@ const UpdateProfile =()=>{
     async function getUser() {
         try{
 
-            const { data } = await axios.get(`http://localhost:8000/api/v1/user/me`,
+            const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/user/me`,
                 {
                     headers: {
                         Authorization: "Bearer " + localStorage.getItem("token")
@@ -38,7 +38,7 @@ const UpdateProfile =()=>{
     async function updateProfile(updateData) {
         try{
 
-            const { data } = await axios.put(`http://localhost:8000/api/v1/user`,
+            const { data } = await axios.put(`${process.env.REACT_APP_API_URL}/user`,
                 updateData,
                 {
                     headers: {

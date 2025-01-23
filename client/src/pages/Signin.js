@@ -17,9 +17,9 @@ const Signin = () => {
   const onSubmit = async (userData) => {
     try{
 
-      const { data } = await axios.post(`http://localhost:8000/api/v1/user/signin`,userData)
+      const { data } = await axios.post( process.env.REACT_APP_API_URL + '/user/signin',userData)
 
-      const userResponse = await axios.get(`http://localhost:8000/api/v1/user/me`,
+      const userResponse = await axios.get( process.env.REACT_APP_API_URL + '/user/me',
         {
           headers: {
             Authorization: "Bearer " + data.token,
